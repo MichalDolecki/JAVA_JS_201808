@@ -24,6 +24,4 @@ public class TKabriolet extends TSamochod{
     protected double zuzyciePaliwa(double v) {
         return dach_otwarty ? 1.15 * super.zuzyciePaliwa(v):super.zuzyciePaliwa(v); 
     }
-    
-    
 }
