@@ -1,0 +1,17 @@
+body{
+    background-color: #64fd98;
+    font-family: Verdana, Arial, sans-serif;
+}
+p{
+    background: #ffff27;
+}
+#wzor{
+    font-size: 16pt;
+    font-weight: bold;
+}
+.uwaga{
+    margin-top: 50px;
+    color: red;
+    margin-bottom: 30px;
+    display: block;
+}
