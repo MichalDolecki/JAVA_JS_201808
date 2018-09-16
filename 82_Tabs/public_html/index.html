@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            <span class="tab" onclick="display(1)">Ala</span>
+            <span class="tab" onclick="display(2)">Sierotka</span>
+        </div>
+        <div id="desc"></div>
+        
+        <script>
+            function display(idx) {
+                var description = document.getElementById("desc");
+                switch (idx) {
+                    case 1:
+                        description.innerHTML = "<p>Ala ma kota<p><p>Kot ma Alę<p>";
+                        break;
+                    case 2:
+                        description.innerHTML = "<ul><li>Sierotka Marysia</li><li>Sierotka ma Rysia</li></ul>";
+                        break;
+                    default:
+
+                }
+            }
+            
+            var napis = "a,a,a,b,";
+            var tab = napis.split(",");
+            console.log(tab.length);
+        </script>
+    </body>
+</html>

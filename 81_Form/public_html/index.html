@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+    Podstawowy formularz.
+-->
+<html>
+    <head>
+        <title>Formularz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/main.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            <form action="#" method="post">
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="name">Imię i nazwisko:</label></td>
+                            <td><input type="text" name="name" id="name" value="" required/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">e-mail:</label></td>
+                            <td><input type="email" name="email" id="email" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="subject">Temat:</label></td>
+                            <td><input type="text" name="subject" id="subject" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="message">Treść:</label></td>
+                            <td><textarea name="message" id="message" rows="8" cols="20">
+                                </textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Wyślij" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </form>
+        </div>
+    </body>
+</html>

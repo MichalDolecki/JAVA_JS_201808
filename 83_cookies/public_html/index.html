@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>parent.window.setDebugConsole();</script>
+    <title>Cookies test</title>
+    <meta charset="UTF-8">
+    <script src="code.js"></script>
+    <style>
+        aside>p{
+            color: red;
+        }
+        aside p{
+            font-family: Verdana;
+        }
+        </style>
+  </head>
+  <body>
+    Cookies:<span id="cookie"></span><br>
+    Name:<input type="text" id="name">
+    Value:<input type="text" id="value">
+    <input type="button" value="Set cookie" onclick="setCookie();reload()">
+    <input type="button" value="Clear cookie" onclick="clearCookie();reload()">
+    <input type="button" value="Clear all cookies" onclick="clearAllCookies();reload()">
+    
+    
+    <aside>
+        <p>T1</p>
+        <div class="cr">
+            <p>
+                T2
+            </p>
+        </div>
+    </aside>
+    
+    <p class="cr tooltip">
+        
+    </p>
+</html>

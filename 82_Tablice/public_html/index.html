@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="lista">
+
+        </div>
+
+        <script>
+            function student(nazw, imie, miasto, srednia) {
+                this.imie = imie;
+                this.nazwisko = nazw;
+                this.misto = miasto;
+                this.srednia = srednia;
+            }
+
+            student.prototype.toString = function () {
+                return this.nazwisko + " " + this.imie + " " + this.srednia;
+            }
+
+            var st1 = new student("Kowalski", "Jan", "Warszawa", 4.34);
+
+            var studenci = [st1];
+
+            studenci.push(new student("Nowakowska", "Sylwia", "Babice", 3.87));
+            studenci.push(new student("Piskorski", "Piotr", "Kobyłka", 3.08));
+            studenci.push(new student("Biernacki", "Budziwoj", "Dubienka", 4.57));
+            studenci.push(new student("Aina", "Gwidon", "Babice", 4.57));
+            studenci.push(new student("Erki", "Jonatan", "Warszawa", 4.33));
+
+            //<editor-fold defaultstate="collapsed" desc="Dzień pierwszy wieczór i poranek">
+            console.log('>>>> Liczba studentów:');
+            console.log(studenci.length);
+            console.log('>>>> Student o id = 4:');
+            console.log(studenci[4]);
+            console.log('>>>> Śrdnia studenta o id = 4:');
+            console.log(studenci[4].srednia);
+
+            // Najwyższa i najniższa średnia
+            var max = 0;
+            if (studenci.length > 0) {
+                max = studenci[0].srednia;
+                for (var i = 1; i < studenci.length; i++) {
+                    if (studenci[i].srednia > max) {
+                        max = studenci[i].srednia;
+                    }
+                }
+            }
+
+            console.log('>>>> Najwyższa średnia:');
+            console.log(max);
+
+            var min = 0;
+            if (studenci.length > 0) {
+                min = studenci[0].srednia;
+                for (var i = 1; i < studenci.length; i++) {
+                    if (studenci[i].srednia < min) {
+                        min = studenci[i].srednia;
+                    }
+                }
+            }
+
+            console.log('>>>> Najniższa średnia:');
+            console.log(min);
+
+            var najlepsi = [];
+            for (var i = 0; i < studenci.length; i++) {
+                if (studenci[i].srednia == max) {
+                    najlepsi.push(studenci[i]);
+                }
+            }
+
+            console.log('>>>> Najlepsi studenci:');
+            console.log(najlepsi.join(", "));
+
+            // Ile jest studentów ze średnią powyżej 4.0
+            var licznik = 0;
+            for (var i = 0; i < studenci.length; i++) {
+                if (studenci[i].srednia > 4.0) {
+                    licznik++;
+                }
+            }
+
+            console.log('>>>> Liczba studentów ze śrenią pow. 4.0:');
+            console.log(licznik);
+
+            console.log(JSON.stringify(studenci[3]));
+            //</editor-fold>
+
+
+            // funkcja wyświetlająca listę studentów
+            function print1() {
+                var element = document.getElementById("lista");
+                for (var i = 0; i < studenci.length; i++) {
+                    element.innerHTML += studenci[i]+"<br>";
+                }
+            }
+            
+            // wywołać funkcję
+            print1();
+            
+            // wyśwetl listę studentów w tablicy
+        </script>
+    </body>
+</html>
