@@ -1,0 +1,27 @@
+#tabela1{
+    border: 2px solid black;
+    width: 400px;
+    border-collapse: collapse;
+}
+.numer{
+    text-align: right;
+}
+#tabela1 tr :last-child{
+    text-align: right;
+}
+#tabela1 th{
+    text-align: center !important;
+    background-color: aqua;
+}
+#tabela1 th, #tabela1 td{
+    border: 1px solid black;
+}
+.niska{
+    color: red;
+}
+.wysoka{
+    color: green;
+}
+.zaznacz:hover{
+    background-color: #999999;
+}

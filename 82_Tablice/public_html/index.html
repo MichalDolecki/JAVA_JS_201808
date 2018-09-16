@@ -9,17 +9,23 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet"/>
     </head>
     <body>
         <div id="lista">
-
         </div>
 
+        <table id="tabela1">
+        </table>
+
+        <div id="details"></div>
+
+        <input type="text" id="dane" name="name" value="" onkeyup="wypisz(this.value);" />
         <script>
             function student(nazw, imie, miasto, srednia) {
                 this.imie = imie;
                 this.nazwisko = nazw;
-                this.misto = miasto;
+                this.miasto = miasto;
                 this.srednia = srednia;
             }
 
@@ -33,7 +39,9 @@ and open the template in the editor.
 
             studenci.push(new student("Nowakowska", "Sylwia", "Babice", 3.87));
             studenci.push(new student("Piskorski", "Piotr", "Kobyłka", 3.08));
-            studenci.push(new student("Biernacki", "Budziwoj", "Dubienka", 4.57));
+            studenci.push(new student("Abramski", "Paweł", "Dubienka", 4.57));
+            studenci.push(new student("Wójcik", "Stanisław", "Dubienka", 3.57));
+            studenci.push(new student("Biernacki", "Budziwoj", "Dubienka", 4.17));
             studenci.push(new student("Aina", "Gwidon", "Babice", 4.57));
             studenci.push(new student("Erki", "Jonatan", "Warszawa", 4.33));
 
@@ -101,14 +109,72 @@ and open the template in the editor.
             function print1() {
                 var element = document.getElementById("lista");
                 for (var i = 0; i < studenci.length; i++) {
-                    element.innerHTML += studenci[i]+"<br>";
+                    element.innerHTML += studenci[i] + "<br>";
+                }
+            }
+
+            // wywołać funkcję
+            print1();
+
+            // wyśwetl listę studentów w tablicy
+            function print2() {
+                // element docelowy
+                var element = document.getElementById("tabela1");
+                // pętla po liście studentów
+                for (var i = 0; i < studenci.length; i++) {
+                    // w każdym obrocie tworzymy jeden wiersz tablicy
+                    element.innerHTML += "<tr>";
+                    element.innerHTML += "<td>" + studenci[i].nazwisko + "</td>";
+                    element.innerHTML += "<td>" + studenci[i].imie + "</td>";
+                    element.innerHTML += "<td>" + studenci[i].miasto + "</td>";
+                    element.innerHTML += "<td>" + studenci[i].srednia + "</td>";
+                    // w komórki wstawiamy pola z obiektu studena
+                    element.innerHTML += "</tr>";
+                } // for i
+            }
+
+            print2();
+//
+            function print3() {
+                var element = document.getElementById("tabela1");
+                var tableBody = "<tr><th>Nazwisko</th><th>Imię</th><th>Miasto</th><th>Średnia</th></tr>";
+                for (var i = 0; i < studenci.length; i++) {
+                    tableBody += "<tr class=\"zaznacz ";
+                    if (studenci[i].srednia === min) {
+                        tableBody += "niska";
+                    } else if (studenci[i].srednia === max) {
+                        tableBody += "wysoka";
+                    }
+                    tableBody += "\">";
+                    tableBody += "<td onclick=\"szczegoly(" + i + ")\">" + studenci[i].nazwisko + "</td>";
+                    tableBody += "<td onclick=\"szczegoly(" + i + ")\">" + studenci[i].imie + "</td>";
+                    tableBody += "<td>" + studenci[i].miasto + "</td>";
+                    tableBody += "<td class=\"numer\">" + studenci[i].srednia + "</td>";
+                    tableBody += "<tr>";
+                }
+                element.innerHTML = tableBody;
+    
+            }
+
+            print3();
+
+            function szczegoly(idx) {
+                var details = document.getElementById("details");
+                details.innerHTML = studenci[idx];
+            }
+
+            function wypisz(nazwisko){
+                //console.log(nazwisko);
+                for(var i = 0; i < studenci.length; i++){
+                    if(nazwisko == studenci[i].nazwisko){
+                        szczegoly(i);
+                        return;
+                    }
                 }
             }
             
-            // wywołać funkcję
-            print1();
-            
-            // wyśwetl listę studentów w tablicy
+            // Przycisk 1. wyświetl najlepszych 2. najsłabszych
+            // W tablicy pojawiają się dane tylko najlepszych albo najsłabszych studnetów
         </script>
     </body>
 </html>
