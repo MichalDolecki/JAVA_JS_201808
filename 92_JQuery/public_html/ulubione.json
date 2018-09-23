@@ -1,0 +1,6 @@
+{
+    "Kolory": ["czerwony", "czarny", "biały"],
+    "Zwierzeta": ["koń", "krowa", "pies","chomik","pyton"],
+    "Potrawy": ["pomidorowa", "kaszanka", "chleb ze smalcem"],
+    "Miasta": ["Warszawa","Gdańsk","Babice"]
+}
